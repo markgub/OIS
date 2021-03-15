@@ -20,8 +20,8 @@ struct LoginPageView: View {
     @State var authenticationDidSucceed: Bool = false
     
     var body: some View {
-        
-        ZStack{
+        NavigationView{
+            ZStack{
             VStack{
                 Logo()
                 HelloText()
@@ -33,12 +33,20 @@ struct LoginPageView: View {
                         .offset(y: -10)
                         .foregroundColor(darkRedColor)
                 }
-                
-                Button(action: { print("Button tapped")}) {
-                    LoginButtonContent()
+                NavigationLink(destination: MainPageView()){
+                    Text("LOGI SISSE")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(width: 220, height: 60)
+                        .background(darkRedColor)
+                        .cornerRadius(35.0)
                 }
-                
+            
             }
+            }
+            .navigationBarTitle("")
+            .navigationBarHidden(true)
             .padding()
             if authenticationDidSucceed{
                 Text("Sisselogimine õnnestus!")

@@ -27,7 +27,7 @@ struct MainPageView: View {
             ZStack {
                 switch selectedIndex {
                 case 0:
-                    NavigationView{
+
                         VStack{
                             HStack{
                                 LessonsShortView()
@@ -35,38 +35,34 @@ struct MainPageView: View {
                             HStack{
                                 LatestGradesView()
                             }
+                            .navigationTitle("Avaleht")
+                            .navigationBarBackButtonHidden(true)
                         }
-                        .navigationTitle("Avaleht")
-                    }
-                    
                 case 1:
-                    NavigationView{
+               
                         Text("Tunniplaan")
                             .navigationTitle("Minu tunniplaan")
-                    }
+                            .navigationBarBackButtonHidden(true)
                     
                 case 2:
-                    NavigationView{
+                  
                         Text("Õpinkukava")
                             .navigationTitle("Minu õpinkukava")
-                    }
+                            .navigationBarBackButtonHidden(true)
                     
                 case 3:
-                    NavigationView{
+                   
                         Text("Teated")
                             .navigationTitle("Teated")
-                    }
-                    
+                            .navigationBarBackButtonHidden(true)
                 case 4:
-                    NavigationView{
+                  
                         Text("Õppetulemused")
                             .navigationTitle("Õppetulemused")
-                    }
-                    
+                            .navigationBarBackButtonHidden(true)
                 default:
-                    NavigationView{
-                        Text("Reamaining tabs")
-                    }
+                    Text("Reamaining tabs")
+                        .navigationBarBackButtonHidden(true)
                 }
             }
             
